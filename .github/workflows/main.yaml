@@ -78,7 +78,16 @@ jobs:
                 "fields": [
                   {
                     "type": "mrkdwn",
-                    "text": "*Deployment:*\nDeployment URL"
+                    "text": "*Deployment:*\n<https://ci-cd-project-production.up.railway.app/>"
+                  }
+                ]
+              },
+              {
+                "type": "section",
+                "fields": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "<https://ci-cd-project-production.up.railway.app/| Open Application>"
                   }
                 ]
               }
