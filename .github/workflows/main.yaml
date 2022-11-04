@@ -3,7 +3,7 @@ name: My Workshop
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 
 jobs:
