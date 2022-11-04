@@ -1,4 +1,4 @@
-name: 
+name: My Workshop
 
 
 on:
@@ -6,20 +6,89 @@ on:
     branches: [main]
 
 
-jobs:
+jobs1:
   my-first-workflow:
     runs-on: ubuntu-latest
 
 
 
     steps:
-    - name: Echo the branch name
-      run: echo "Current branch - ${{ github.ref_name }}"
+
     - name: Checkout the current repo
       uses: actions/checkout@v3
-    - name:
-      run:
-    - name:
-      run:
-    - name:
-      run:
+      with:
+        ref: ${{ github.ref_name }}
+
+
+    - name: Node
+      uses: actions/setup-node@v1
+      with: 
+        node-version: 16
+
+
+    - name: Install Railway
+      run: npm i -g @railway/cli
+
+    - name: Railway Deployment
+      run: railway up
+      env:
+        RAILWAY_TOKEN: ${{ secrets.RAILWAY_SECRETS }}
+    
+
+    - name: Slack Deployment
+      id: slack
+      uses: slackapi/slack-github-action@v1.23.0
+      with: payload-file-path "./payload-slack-content.json"
+      env:
+        channel-id: 'slack deployment'
+        payload:
+          {
+
+          "blocks": [
+            {
+              "type": "section",
+              "text": {
+                "type": "mrkdwn",
+                "text": "*DipSA55 CI/CD Assignment Submission*"
+              }
+            },
+            {
+              "type": "divider"
+            },
+            {
+              "type": "section",
+              "fields": [
+                {
+                  "type": "mrkdwn",
+                  "text": "*Name:*\nNguyen Binh Tran"
+                },
+                {
+                  "type": "mrkdwn",
+                  "text": "*Metriculation:*\nabc123"
+                }
+              ]
+            },
+            {
+              "type": "section",
+              "fields": [
+                {
+                  "type": "mrkdwn",
+                  "text": "*Email:*\ne1045732@u.nus.edu"
+                },
+                {
+                  "type": "mrkdwn",
+                  "text": "*Repository:*\nhttps://github.com/DanielTran97/CI-CD-project"
+                }
+              ]
+            },
+            {
+              "type": "section",
+              "fields": [
+                {
+                  "type": "mrkdwn",
+                  "text": "*Deployment:*\nDeployment URL"
+                }
+              ]
+            }
+          ]
+        }
