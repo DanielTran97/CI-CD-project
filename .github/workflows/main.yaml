@@ -10,8 +10,6 @@ jobs:
   my-first-workflow:
     runs-on: ubuntu-latest
 
-
-
     steps:
 
     - name: Checkout the current repo
@@ -25,7 +23,6 @@ jobs:
       with: 
         node-version: 16
 
-
     - name: Install Railway
       run: npm i -g @railway/cli
 
@@ -34,7 +31,6 @@ jobs:
       env:
         RAILWAY_TOKEN: ${{ secrets.RAILWAY_SECRETS }}
     
-
     - name: Slack Deployment
       id: slack
       uses: slackapi/slack-github-action@v1.23.0
