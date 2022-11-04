@@ -86,5 +86,5 @@ jobs:
           }
       
       env:
-        SLACK_WEBHOOK_URL: ${{ secrets.MYWORKSHOP_SECRETS }}
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_TOKENS }}
         SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
