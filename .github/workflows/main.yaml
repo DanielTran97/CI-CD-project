@@ -56,7 +56,7 @@ jobs:
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Metriculation:*\A0265057B"
+                    "text": "*Metriculation:*\nA0265057B"
                   }
                 ]
               },
