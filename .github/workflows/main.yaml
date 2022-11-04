@@ -11,15 +11,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
     - name: Checkout the current repo
       uses: actions/checkout@v3
-      with:
-        ref: ${{ github.ref_name }}
+
 
 
     - name: Node
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v3
       with: 
         node-version: 16
 
@@ -34,66 +32,54 @@ jobs:
     - name: Slack Deployment
       id: slack
       uses: slackapi/slack-github-action@v1.23.0
-      with: payload-file-path "./payload-slack-content.json"
-      env:
-        channel-id: 'slack deployment'
-        payload:
+      with:        
+        payload: |
           {
-
-          "blocks": [
-            {
-              "type": "section",
-              "text": {
-                "type": "mrkdwn",
-                "text": "*DipSA55 CI/CD Assignment Submission*"
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "*DipSA55 CI/CD Assignment Submission*"
+                }
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "section",
+                "fields": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Name:*\nNguyen Binh Tran"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Metriculation:*\nabc123"
+                  }
+                ]
+              },
+              {
+                "type": "section",
+                "fields": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Email:*\ne1045732@u.nus.edu"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Repository:*\nhttps://github.com/DanielTran97/CI-CD-project"
+                  }
+                ]
+              },
+              {
+                "type": "section",
+                "fields": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Deployment:*\nDeployment URL"
+                  }
+                ]
               }
-            },
-            {
-              "type": "divider"
-            },
-            {
-              "type": "section",
-              "fields": [
-                {
-                  "type": "mrkdwn",
-                  "text": "*Name:*\nNguyen Binh Tran"
-                },
-                {
-                  "type": "mrkdwn",
-                  "text": "*Metriculation:*\nabc123"
-                }
-              ]
-            },
-            {
-              "type": "section",
-              "fields": [
-                {
-                  "type": "mrkdwn",
-                  "text": "*Email:*\ne1045732@u.nus.edu"
-                },
-                {
-                  "type": "mrkdwn",
-                  "text": "*Repository:*\nhttps://github.com/DanielTran97/CI-CD-project"
-                }
-              ]
-            },
-            {
-              "type": "section",
-              "fields": [
-                {
-                  "type": "mrkdwn",
-                  "text": "*Deployment:*\nhttps://railway.app/project/77c6350e-2672-42ad-8c5e-f163749f3c57/service/e06eecd7-98bf-420b-aa76-588bf2f2c446"
-                }
-              ]
-            },
-            {
-              "type": "section",
-              "fields": [
-                {
-                  "type": "mrkdwn",
-                  "text": "*Deployment:*\n<https://railway.app/project/77c6350e-2672-42ad-8c5e-f163749f3c57/service/e06eecd7-98bf-420b-aa76-588bf2f2c446|Open Application>"
-                }
-              ]
-            }
-          ]
-        }
+            ]
+          }
