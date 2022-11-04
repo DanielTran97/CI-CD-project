@@ -86,7 +86,16 @@ jobs1:
               "fields": [
                 {
                   "type": "mrkdwn",
-                  "text": "*Deployment:*\nDeployment URL"
+                  "text": "*Deployment:*\nhttps://railway.app/project/77c6350e-2672-42ad-8c5e-f163749f3c57/service/e06eecd7-98bf-420b-aa76-588bf2f2c446"
+                }
+              ]
+            },
+            {
+              "type": "section",
+              "fields": [
+                {
+                  "type": "mrkdwn",
+                  "text": "*Deployment:*\n<https://railway.app/project/77c6350e-2672-42ad-8c5e-f163749f3c57/service/e06eecd7-98bf-420b-aa76-588bf2f2c446|Open Application>"
                 }
               ]
             }
