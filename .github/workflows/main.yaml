@@ -9,7 +9,7 @@ on:
 
 jobs:
   Workshop-workflow:
-    if: "!contains(github.event.commits.message, '#NORUN')"
+    if: "!contains(github.event.commits.message, '[ci skip]')"
     runs-on: ubuntu-latest
 
     steps:
