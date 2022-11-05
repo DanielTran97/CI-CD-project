@@ -17,10 +17,9 @@ jobs:
 
     - name: Create Release
       id: CreateRelease
-      uses: actions/create-release@v1
-      with:
-        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}   
-        tag_name: Release_TAG         
+      uses: actions/create-release@v1     
+      env:
+        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}          
 
     - name: Node
       uses: actions/setup-node@v3
