@@ -20,8 +20,9 @@ jobs:
       uses: actions/create-release@latest
       with:
         tag_name: Create_Release
+        allowUpdates: true
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}     
 
     - name: Node
       uses: actions/setup-node@v3
