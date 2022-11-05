@@ -9,7 +9,7 @@ on:
 
 jobs:
   Workshop-workflow:
-    if: "!contains(github.event.commits[0].message, '[skip ci]')"
+    if: "!contains(github.event.commits.message, '#NORUN')"
     runs-on: ubuntu-latest
 
     steps:
@@ -27,7 +27,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
       with:
-        tag_name: Test_NORUN_6
+        tag_name: Test_NORUN_7
 
     - name: Install Railway
       run: npm i -g @railway/cli
