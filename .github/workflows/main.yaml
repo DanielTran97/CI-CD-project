@@ -103,5 +103,5 @@ jobs:
           }
       
       env:
-        SLACK_WEBHOOK_URL: ${{ CICD_SUBMISSION_TOKEN }}
+        SLACK_WEBHOOK_URL: ${{ secrets.CICD_SUBMISSION_TOKEN }}
         SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK 
