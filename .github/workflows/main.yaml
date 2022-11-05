@@ -3,12 +3,14 @@ name: My Workshop
 
 on:
   push:
+    tags:
+    - '*'
     branches: 
       - 'v[0-9]+.[0-9]+'
 
 
 jobs:
-  my-first-workflow:
+  Workshop-workflow:
     runs-on: ubuntu-latest
 
     steps:
