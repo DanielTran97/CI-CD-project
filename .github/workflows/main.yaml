@@ -21,7 +21,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
       with:
-        tag_name: Release_Test          
+        tag_name: Release_Test
+        allowUpdates: true          
 
     - name: Node
       uses: actions/setup-node@v3
