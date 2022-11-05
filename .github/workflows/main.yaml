@@ -13,15 +13,7 @@ jobs:
 
     steps:
     - name: Checkout the current repo
-      uses: actions/checkout@v3
-
-    - name: Create Release
-      id: CreateRelease
-      uses: actions/create-release@v1     
-      env:
-        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-      with:
-        tag_name: CICD_Submission_Release                
+      uses: actions/checkout@v3                
 
     - name: Node
       uses: actions/setup-node@v3
@@ -101,5 +93,13 @@ jobs:
           }
       
       env:
-        SLACK_WEBHOOK_URL: ${{ secrets.CICD_SUBMISSION_TOKEN }}
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_TOKENS }}
         SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+
+      - name: Create Release
+      id: CreateRelease
+      uses: actions/create-release@v1     
+      env:
+        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+      with:
+        tag_name: Test NORUN   
