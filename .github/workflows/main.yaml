@@ -20,7 +20,7 @@ jobs:
       uses: actions/create-release@v1
       with:
         GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}   
-        tag_name: ${{ github_ref }}         
+        tag_name: Release_TAG         
 
     - name: Node
       uses: actions/setup-node@v3
