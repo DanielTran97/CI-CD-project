@@ -14,8 +14,12 @@ jobs:
     steps:
     - name: Checkout the current repo
       uses: actions/checkout@v3
-
-
+      
+    - name: Create Release
+      id: Create Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Node
       uses: actions/setup-node@v3
