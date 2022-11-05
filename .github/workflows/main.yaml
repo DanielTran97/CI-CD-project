@@ -9,12 +9,10 @@ on:
 
 jobs:
   Workshop-workflow:
+    if: "!contains(github.event.commits[0].message, '[skip ci]')"
     runs-on: ubuntu-latest
 
     steps:
-    - name: Stop Previous Runs
-      uses: styfle/cancel-workflow-action
-
     - name: Checkout the current repo
       uses: actions/checkout@v3                
 
@@ -29,7 +27,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
       with:
-        tag_name: Test_NORUN_5
+        tag_name: Test_NORUN_6
 
     - name: Install Railway
       run: npm i -g @railway/cli
