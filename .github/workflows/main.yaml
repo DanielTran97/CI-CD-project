@@ -28,7 +28,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
       with:
-        tag_name: Test_NORUN_7
+        tag_name: Test_NORUN_8
 
     - name: Install Railway
       run: npm i -g @railway/cli
