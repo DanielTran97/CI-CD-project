@@ -19,7 +19,8 @@ jobs:
       id: CreateRelease
       uses: actions/create-release@v1     
       env:
-        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}          
+        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+        tag_name: Release_Test          
 
     - name: Node
       uses: actions/setup-node@v3
