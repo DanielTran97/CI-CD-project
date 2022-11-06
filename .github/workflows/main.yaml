@@ -77,7 +77,7 @@ jobs:
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Repository:*\nhttps://github.com/DanielTran97/CI-CD-project"
+                    "text": "*Repository:*\n ${{ github.repositoryUrl.https://github.com/DanielTran97/CI-CD-project }}"
                   }
                 ]
               },
@@ -103,5 +103,5 @@ jobs:
           }
       
       env:
-        SLACK_WEBHOOK_URL: ${{ secrets.CICD_SUBMISSION_TOKEN }}
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_TOKENS }}
         SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK 
