@@ -28,7 +28,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
       with:
-        tag_name: WORKSHOP_CI/CD_Test
+        tag_name: WORKSHOP_CI/CD_FINAL
 
     - name: Install Railway
       run: npm i -g @railway/cli
@@ -77,7 +77,7 @@ jobs:
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Repository:*\n${{github.repositoryUrl}}$"
+                    "text": "*Repository:*\n${{github.repositoryUrl}}"
                   }
                 ]
               },
@@ -103,5 +103,5 @@ jobs:
           }
       
       env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_TOKENS }}
+        SLACK_WEBHOOK_URL: ${{ secrets.CICD_SUBMISSION_TOKEN }}
         SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK 
