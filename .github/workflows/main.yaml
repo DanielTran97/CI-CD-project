@@ -28,7 +28,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
       with:
-        tag_name: CI/CD_RELEASE
+        tag_name: CI/CD_RELEASE_TEST
 
     - name: Install Railway
       run: npm i -g @railway/cli
@@ -77,7 +77,7 @@ jobs:
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Repository:*\n ${{ github.repositoryUrl.https://github.com/DanielTran97/CI-CD-project }}"
+                    "text": "*Repository:*\ngit://github.com/DanielTran97/CI-CD-project"
                   }
                 ]
               },
